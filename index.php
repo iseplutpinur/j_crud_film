@@ -17,7 +17,7 @@ cek_login();
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-info">
     <a class="navbar-brand" href="./index.php">CRUD Data Film</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -53,15 +53,15 @@ cek_login();
         <h5 class="card-title">Aplikasi pengelolaan data film</h5>
         <p class="card-text">Aplikasi ini dibuat untuk Ujian akhir semester Mata kuliah pemrograman web I, Dalam aplikasi ini terdapat fitur authentikasi, dan beberapa tabel diantaranya tabel Administrator, Negara, Genre Dan tabel film.</p>
         <p class="card-text">Aplikasi ini dibuat oleh:</p>
-        <p class="card-text my-0 py-0">Norbertus Tenau</p>
-        <p class="card-text my-0 py-0">2113201019</p>
+        <p class="card-text my-0 py-0">Dila Yuliani</p>
+        <p class="card-text my-0 py-0">2113201080</p>
       </div>
     </div>
   </main>
 
-  <div class="footer bg-dark text-light py-3 mt-3">
+  <div class="footer bg-info text-light py-3 mt-3">
     <div class="container">
-      <p class="m-0">Copyright &copy 2022 | Norbertus Tenau (2113201019)</p>
+      <p class="m-0">Copyright &copy 2022 | Dila Yuliani (2113201080)</p>
     </div>
   </div>
 
