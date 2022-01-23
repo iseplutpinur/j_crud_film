@@ -9,12 +9,12 @@ Teknologi yang digunakan
 
 Fitur
   Autentikasi
-  CRUD Data Penerbit
-  CRUD Data Penulis
-  CRUD Data Buku
+  CRUD Data Genre
+  CRUD Data Negara
+  CRUD Data Film
 
 Tabel
-  Penulis
-  Penerbit
-  Buku
+  Negara
+  Genre
+  Film
   admin

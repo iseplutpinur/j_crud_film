@@ -11,21 +11,22 @@ if (isset($_POST['submit'])) {
   // ambil data dan simpan ke dalam variable
   $nama = $_POST['nama'];
   $tahun = $_POST['tahun'];
+  $rating = $_POST['rating'];
   $deskripsi = $_POST['deskripsi'];
-  $penerbit = $_POST['penerbit'];
-  $penulis = $_POST['penulis'];
+  $genre = $_POST['genre'];
+  $negara = $_POST['negara'];
   $query = "";
 
 
   // cek apakah datanya di tambah atau di update dengan mengecek deskripsi url
   if (isset($_GET['edit'])) {
     $id = $_GET['edit'];
-    $query = "UPDATE buku SET nama='$nama', deskripsi='$deskripsi', penerbit_id='$penerbit', penulis_id='$penulis', tahun='$tahun' WHERE id='$id'";
+    $query = "UPDATE film SET nama='$nama', deskripsi='$deskripsi', genre_id='$genre', negara_id='$negara', tahun='$tahun', rating='$rating' WHERE id='$id'";
   }
   // jika tidak ada data yang di kirim di url maka data di tambah
   else {
-    $query = "INSERT INTO `buku` (`id`, `penulis_id`, `penerbit_id`, `nama`, `tahun`, `deskripsi`) VALUES
-    (NULL, '$penulis', '$penerbit', '$nama', '$tahun', '$deskripsi')";
+    $query = "INSERT INTO `film` (`id`, `negara_id`, `genre_id`, `nama`, `rating`, `tahun`, `deskripsi`) VALUES
+    (NULL, '$negara', '$genre', '$nama',  '$rating', '$tahun', '$deskripsi')";
   }
   $result = mysqli_query($conn, $query);
 
@@ -37,9 +38,10 @@ if (isset($_POST['submit'])) {
 $id = '';
 $nama = '';
 $deskripsi = '';
-$penerbit = '';
-$penulis = '';
+$genre = '';
+$negara = '';
 $tahun = '';
+$rating = '';
 $title = 'Tambah';
 // cek jika halaman ini untuk edit data
 if (isset($_GET['edit'])) {
@@ -47,15 +49,16 @@ if (isset($_GET['edit'])) {
   $title = 'Ubah';
 
   // mengambil data dari database
-  $result = mysqli_query($conn, "SELECT * FROM buku WHERE id='$id'");
+  $result = mysqli_query($conn, "SELECT * FROM film WHERE id='$id'");
   $data = mysqli_fetch_assoc($result);
   // jika data di temukan maka simpan ke dalam variable yang sudah ada.
   if ($data) {
     $nama = $data['nama'];
     $deskripsi = $data['deskripsi'];
     $tahun = $data['tahun'];
-    $penerbit = $data['penerbit_id'];
-    $penulis = $data['penulis_id'];
+    $rating = $data['rating'];
+    $genre = $data['genre_id'];
+    $negara = $data['negara_id'];
   }
 }
 ?>
@@ -64,7 +67,7 @@ if (isset($_GET['edit'])) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title><?= $title ?> Data Buku | CRUD Data Buku</title>
+  <title><?= $title ?> Data Film | CRUD Data Film</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -75,7 +78,7 @@ if (isset($_GET['edit'])) {
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="./index.php">CRUD Data Buku</a>
+    <a class="navbar-brand" href="./index.php">CRUD Data Film</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -86,13 +89,13 @@ if (isset($_GET['edit'])) {
           <a class="nav-link" href="./index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./penulis.php">Penulis</a>
+          <a class="nav-link" href="./negara.php">Penulis</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./penerbit.php">Penerbit</a>
+          <a class="nav-link" href="./genre.php">Genre</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="./buku.php">Buku</a>
+          <a class="nav-link active" href="./film.php">Film</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./logout.php">Logout</a>
@@ -110,25 +113,25 @@ if (isset($_GET['edit'])) {
     <div class="card shadow mt-3">
       <div class="card-header">
         <div class="d-flex justify-content-between align-items-center">
-          <label class="h6"><?= $title ?> Data Buku</label>
-          <a href="./buku.php" class="btn btn-sm btn-secondary">Kembali</a>
+          <label class="h6"><?= $title ?> Data Film</label>
+          <a href="./film.php" class="btn btn-sm btn-secondary">Kembali</a>
         </div>
       </div>
       <div class="card-body">
         <form method="POST">
           <div class="form-group">
-            <label for="nama">Nama Buku</label>
-            <input type="text" class="form-control" name="nama" id="nama" value="<?= $nama ?>" placeholder="Nama Buku" required>
+            <label for="nama">Nama Film</label>
+            <input type="text" class="form-control" name="nama" id="nama" value="<?= $nama ?>" placeholder="Nama Film" required>
           </div>
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label for="penulis">Penulis</label>
-                <select class="form-control" name="penulis" id="penulis">
+                <label for="negara">Penulis</label>
+                <select class="form-control" name="negara" id="negara">
                   <?php
-                  $result = mysqli_query($conn, "SELECT * FROM penulis");
+                  $result = mysqli_query($conn, "SELECT * FROM negara");
                   while ($row = mysqli_fetch_assoc($result)) {
-                    $selected = $row['id'] == $penulis ? 'selected' : '';
+                    $selected = $row['id'] == $negara ? 'selected' : '';
                     echo "<option value='{$row['id']}' {$selected}>{$row['nama']}</option>";
                   }
                   ?>
@@ -137,12 +140,12 @@ if (isset($_GET['edit'])) {
             </div>
             <div class="col-md-6">
               <div class="form-group">
-                <label for="penerbit">Penerbit</label>
-                <select class="form-control" name="penerbit" id="penerbit">
+                <label for="genre">Genre</label>
+                <select class="form-control" name="genre" id="genre">
                   <?php
-                  $result = mysqli_query($conn, "SELECT * FROM penerbit");
+                  $result = mysqli_query($conn, "SELECT * FROM genre");
                   while ($row = mysqli_fetch_assoc($result)) {
-                    $selected = $row['id'] == $penerbit ? 'selected' : '';
+                    $selected = $row['id'] == $genre ? 'selected' : '';
                     echo "<option value='{$row['id']}' {$selected}>{$row['nama']}</option>";
                   }
                   ?>
@@ -153,6 +156,10 @@ if (isset($_GET['edit'])) {
           <div class="form-group">
             <label for="tahun">Tahun Terbit</label>
             <input type="number" class="form-control" name="tahun" id="tahun" value="<?= $tahun ?>" placeholder="Tahun Terbit" required>
+          </div>
+          <div class="form-group">
+            <label for="rating">Rating Film</label>
+            <input type="text" class="form-control" name="rating" id="rating" value="<?= $rating ?>" placeholder="Rating Film" required>
           </div>
           <div class="form-group">
             <label for="deskripsi">Deskripsi</label>

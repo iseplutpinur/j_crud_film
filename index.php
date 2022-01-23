@@ -7,7 +7,7 @@ cek_login();
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>CRUD Data Buku</title>
+  <title>CRUD Data Film</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,7 +18,7 @@ cek_login();
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="./index.php">CRUD Data Buku</a>
+    <a class="navbar-brand" href="./index.php">CRUD Data Film</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -30,15 +30,15 @@ cek_login();
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="./penulis.php">Penulis</a>
+          <a class="nav-link" href="./negara.php">Negara</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="./penerbit.php">Penerbit</a>
+          <a class="nav-link" href="./genre.php">Genre</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="./buku.php">Buku</a>
+          <a class="nav-link" href="./film.php">Film</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./logout.php">Logout</a>
@@ -48,10 +48,10 @@ cek_login();
   </nav>
   <main class="container my-3">
     <div class="card">
-      <h5 class="card-header">CRUD Data Buku</h5>
+      <h5 class="card-header">CRUD Data Film</h5>
       <div class="card-body">
-        <h5 class="card-title">Aplikasi pengelolaan data buku</h5>
-        <p class="card-text">Aplikasi ini dibuat untuk Ujian akhir semester Mata kuliah pemrograman web I, Dalam aplikasi ini terdapat fitur authentikasi, dan beberapa tabel diantaranya tabel Administrator, Penulis, Penerbit Dan tabel buku.</p>
+        <h5 class="card-title">Aplikasi pengelolaan data film</h5>
+        <p class="card-text">Aplikasi ini dibuat untuk Ujian akhir semester Mata kuliah pemrograman web I, Dalam aplikasi ini terdapat fitur authentikasi, dan beberapa tabel diantaranya tabel Administrator, Negara, Genre Dan tabel film.</p>
         <p class="card-text">Aplikasi ini dibuat oleh:</p>
         <p class="card-text my-0 py-0">Norbertus Tenau</p>
         <p class="card-text my-0 py-0">2113201019</p>
