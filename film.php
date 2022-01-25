@@ -41,7 +41,7 @@ if (isset($_GET['delete'])) {
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="./negara.php">Penulis</a>
+          <a class="nav-link" href="./negara.php">Negara</a>
         </li>
 
         <li class="nav-item">
@@ -77,7 +77,7 @@ if (isset($_GET['delete'])) {
             <tr>
               <th scope="col">No</th>
               <th scope="col">Nama</th>
-              <th scope="col">Penulis</th>
+              <th scope="col">Negara</th>
               <th scope="col">Genre</th>
               <th scope="col">Tahun</th>
               <th scope="col">Rating</th>

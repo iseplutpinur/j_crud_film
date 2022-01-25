@@ -89,7 +89,7 @@ if (isset($_GET['edit'])) {
           <a class="nav-link" href="./index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./negara.php">Penulis</a>
+          <a class="nav-link" href="./negara.php">Negara</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./genre.php">Genre</a>
@@ -126,7 +126,7 @@ if (isset($_GET['edit'])) {
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                <label for="negara">Penulis</label>
+                <label for="negara">Negara</label>
                 <select class="form-control" name="negara" id="negara">
                   <?php
                   $result = mysqli_query($conn, "SELECT * FROM negara");
